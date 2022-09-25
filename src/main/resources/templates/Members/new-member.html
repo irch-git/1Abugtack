@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head th:replace="layout :: headTag"></head>
+	<body>
+		<nav th:replace="layout :: navBar"></nav>
+	
+		<div class="container">
+			<!-- <button th:href="@{/members}" class="btn btn-primary">See All Members</button> -->
+			<form action="/members/saved" th:object="${memberFormHTML}" method="POST">
+			  <div class="row mb-3">
+			    <label for="firstName" class="col-sm-2 col-form-label">First Name</label>
+			    <div class="col-sm-10">
+			      <input th:field="${memberFormHTML.memberFirstName}" type="text" class="form-control" id="firstName">
+			    </div>
+			  </div>
+			  <div class="row mb-3">
+			    <label for="lastName" class="col-sm-2 col-form-label">Last Name</label>
+			    <div class="col-sm-10">
+			      <input th:field="${memberFormHTML.memberLastName}" type="text" class="form-control" id="lastName">
+			    </div>
+			  </div>
+	  		  <div class="row mb-3">
+			    <label for="email" class="col-sm-2 col-form-label">Email</label>
+			    <div class="col-sm-10">
+			      <input th:field="${memberFormHTML.memberEmail}" type="email" class="form-control" id="email">
+			    </div>
+			  </div>
+			  <fieldset class="row mb-3">
+			    <legend class="col-form-label col-sm-2 pt-0">Job Title</legend>
+			    <div class="col-sm-10">
+			      <div class="form-check">
+			        <input th:field="${memberFormHTML.memberTitle}" th:value="Software_Developer" class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+			        <label class="form-check-label" for="gridRadios1">
+			          Software Developer
+			        </label>
+			      </div>
+			      <div class="form-check">
+			        <input th:field="${memberFormHTML.memberTitle}" th:value="Network_Operator" class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+			        <label class="form-check-label" for="gridRadios2">
+			          Network Operator
+			        </label>
+			      </div>
+			      <div class="form-check">
+			        <input th:field="${memberFormHTML.memberTitle}" th:value="DevOps" class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+			        <label class="form-check-label" for="gridRadios3">
+			          DevOps
+			        </label>
+			      </div>
+			    </div>
+			  </fieldset>
+			  <button type="submit" class="btn btn-primary">Save</button>
+			</form>
+		</div>
+		
+	</body>
+
+</html>

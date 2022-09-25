@@ -1,4 +1,4 @@
-package com.Abugtrack;
+package com.bugtrack1A;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
